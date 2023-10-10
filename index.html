@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Enter The Marks</p>
+
+    Subject - 1 :- <input id="sub1" type="number" /><br />
+    <br />
+    Subject - 2 :- <input id="sub2" type="number" /><br />
+    <br />
+    Subject - 3 :- <input id="sub3" type="number" /><br />
+    <br />
+    Subject - 4 :- <input id="sub4" type="number" /><br />
+    <br />
+
+    <input type="submit" onclick="studentResult()" />
+
+    <h2 id="grade"></h2>
+
+    <h1 id="printit"></h1>
+  </body>
+  <script>
+    function studentResult() {
+      //input from user
+
+      let sub01 = parseInt(document.getElementById("sub1").value);
+      let sub02 = parseInt(document.getElementById("sub2").value);
+      let sub03 = parseInt(document.getElementById("sub3").value);
+      let sub04 = parseInt(document.getElementById("sub4").value);
+
+      // total of marks
+
+      let subTotal = sub01 + sub02 + sub03 + sub04;
+
+      console.log(subTotal);
+
+      //persentage formula
+
+      let subPer = (subTotal * 100) / 400;
+
+      console.log(subPer);
+
+      // grade from marks with switch case
+
+      switch (true) {
+        case subPer >= 100:
+          document.getElementById("printit").innerHTML = "A";
+          break;
+        case subPer >= 90:
+          document.getElementById("printit").innerHTML = "A";
+          break;
+        case subPer >= 80:
+          document.getElementById("printit").innerHTML = "B";
+          break;
+        case subPer >= 70:
+          document.getElementById("printit").innerHTML = "C";
+          break;
+        case subPer >= 60:
+          document.getElementById("printit").innerHTML = "D";
+          break;
+        case subPer >= 50:
+          document.getElementById("printit").innerHTML = "E";
+          break;
+        case subPer >= 33:
+          document.getElementById("printit").innerHTML = "F";
+          break;
+        case subPer <= 33:
+          document.getElementById("printit").innerHTML = "FAil";
+          break;
+
+        default:
+          document.getElementById("printit").innerHTML =
+            "Please Enter Valid Marks ";
+          break;
+      }
+    }
+  </script>
+</html>
